@@ -11,9 +11,7 @@ export default function Stocks() {
                     stocks.map((stock, idx) => {
                         const { name, symbol } = stock;
                         return (
-
                             <li key={idx}><Link to={`/stocks/${symbol}`}>{name}</Link></li>
-
                         )
                     })
                 }

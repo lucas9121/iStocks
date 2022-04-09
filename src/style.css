@@ -34,3 +34,7 @@ nav ul li:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+
+main {
+    padding-left: 20px;
+}
