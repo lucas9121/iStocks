@@ -8,7 +8,7 @@ import Stock from "./pages/Stock"
 
 export default function App() {
     return (
-        <div>
+        <div className="App">
             <Header />
             <Nav />
             <Routes>
