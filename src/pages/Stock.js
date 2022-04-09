@@ -25,12 +25,12 @@ export default function Stock() {
         <main>
             <h1>Stock Page</h1>
             <p>Name: {stock.name}</p>
-            <p>Symbol:{stock.symbol} </p>
-            <p>Open Price:{stock.open} </p>
-            <p>Close Price: {stock.lastPrice}</p>
-            <p>Change:{stock.change} </p>
-            <p>Day High:{stock.high} </p>
-            <p>Day low:{stock.low} </p>
+            <p>Symbol: {stock.symbol} </p>
+            <p>Open Price: ${stock.open} </p>
+            <p>Close Price: ${stock.lastPrice}</p>
+            <p>Change: ${stock.change} </p>
+            <p>Day High: ${stock.high} </p>
+            <p>Day low: ${stock.low} </p>
         </main>
         
     )
