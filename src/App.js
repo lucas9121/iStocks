@@ -3,7 +3,7 @@ import Nav from "./components/Nav"
 import Home from "./pages/Home"
 import { Route, Routes } from "react-router-dom"
 import About from "./pages/About"
-import Stocks from "./pages/Dashboard"
+import Dashboard from "./pages/Dashboard"
 import Stock from "./pages/Stock"
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
             <Nav />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/stocks" element={<Stocks />} />
+                <Route path="/stocks" element={<Dashboard />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/stocks/:symbol" element={<Stock />} />
             </Routes>
