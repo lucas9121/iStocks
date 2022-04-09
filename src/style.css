@@ -10,9 +10,11 @@ body {
 
 header{
     display: flex;
+    align-items: center;
     border: 1px solid black;
     background-color: #6532cb;
     height: 60px;
+    padding-left: 3%;
 }
 header a{
     color: white;
