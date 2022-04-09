@@ -4,7 +4,7 @@ import stocks from "../data"
 
 export default function Stocks() {
     return (
-        <div>
+        <main>
             <h1>Stocks</h1>
             <ul>
                 {
@@ -18,7 +18,7 @@ export default function Stocks() {
                     })
                 }
             </ul>
-        </div>
+        </main>
 
     )
 }
