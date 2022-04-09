@@ -29,3 +29,8 @@ nav ul {
 nav ul li {
     padding: 5px;
 }
+
+nav ul li:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
