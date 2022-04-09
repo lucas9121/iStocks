@@ -9,9 +9,9 @@ export default function Stocks() {
             <ul>
                 {
                     stocks.map((stock, idx) => {
-                        const { name, symbol } = stock;
+                        const { symbol } = stock;
                         return (
-                            <li key={idx}><Link to={`/stocks/${symbol}`}>{name}</Link></li>
+                            <li key={idx}><Link to={`/stocks/${symbol}`}>{symbol}</Link></li>
                         )
                     })
                 }
