@@ -28,7 +28,7 @@ export default function Stock() {
             <p>Symbol: {stock.symbol} </p>
             <p>Open Price: ${stock.open} </p>
             <p>Close Price: ${stock.lastPrice}</p>
-            <p>Change: ${stock.change} </p>
+            <p>Change: ${stock.change.toFixed(2)} </p>
             <p>Day High: ${stock.high} </p>
             <p>Day low: ${stock.low} </p>
         </main>
