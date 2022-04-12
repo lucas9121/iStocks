@@ -8,7 +8,9 @@ export default function Stock(props) {
     const params = useParams();
     const symbol = params.symbol;
     const URL = `https://financialmodelingprep.com/api/v3/quote/${symbol}?apikey=${apiKey}`;
+    // const example = `https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=1693ef68995ff34e46bfa87d2b6b909f`
     const [stock, setStock] = useState({});
+    const [color, setColor] = useState('black')
     
     // const getStock = async () => {
     //     try {
@@ -45,16 +47,34 @@ export default function Stock(props) {
     //         </div>
     //     </main>
     // );
+    // let change = stock.change
+    // if(change > 0){
+    //     setColor('green')
+    // } else {
+    //     setColor('red')
+    // }
+
 
     const loaded = () => {
         return (
             <main>
                 <div>
+                    {/* <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}>{stock.change.toFixed(2)}</span> </h2>
+                    <p>Symbol {stock.symbol} </p>
+                    <p>Price ${stock.price}</p>
+                    <p>Volume Avg. {(stock.volume/1000000).toFixed(2)}M </p>
+                    {stock.marketCap > 12 ? <p>Market Cap {(stock.marketCap/1000000000000).toFixed(3)}T</p>: stock.marketCap > 9 && stock.marketCap <= 12 ? <p>Market Cap {(stock.marketCap/1000000000).toFixed(3)}B </p> : <p>Market Cap {(stock.marketCap/1000000).toFixed(3)}M </p> }
+                    <p>Change: ${stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)})</p>
+                    <p>Daily High: ${stock.dayHigh}</p>
+                    <p>Daily Low: ${stock.dayLow}</p>
+                    <p>52 Week Range {stock.yearLow}-{stock.yearHigh} </p>
+                    <p>Year Low: {stock.yearLow} </p> */}
                     <h1>{stock.name}</h1>
-                    <h1>Price ${stock.price}</h1>
-                    <h2>Change: ${stock.change.toFixed(2)}</h2>
-                    <h2>Daily High: ${stock.dayHigh}</h2>
-                    <h2>Daily Low: ${stock.dayLow}</h2>
+                    <h1>USD {stock.price}</h1>
+                    <h2>Change: {stock.change.toFixed(2)}</h2>
+                    <h2>Daily High: {stock.dayHigh}</h2>
+                    <h2>Daily Low: {stock.dayLow}</h2>
+
                 </div>
             </main>
         )
