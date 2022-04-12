@@ -55,3 +55,13 @@ main ul {
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+.column {
+    border: solid;
+}
+
+.column > p {
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: solid 1px; */
+}
