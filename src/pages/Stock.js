@@ -33,6 +33,11 @@ export default function Stock(props) {
 
     useEffect(() => {
         getStock()
+        if(stock.change > 0){
+            setColor('green')
+        } else {
+            setColor('red')
+        }
     }, []);
 
 
@@ -47,19 +52,14 @@ export default function Stock(props) {
     //         </div>
     //     </main>
     // );
-    // let change = stock.change
-    // if(change > 0){
-    //     setColor('green')
-    // } else {
-    //     setColor('red')
-    // }
+   
 
 
     const loaded = () => {
         return (
             <main>
                 <div>
-                    {/* <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}>{stock.change.toFixed(2)}</span> </h2>
+                    <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}>{stock.change.toFixed(2)}</span> </h2>
                     <p>Symbol {stock.symbol} </p>
                     <p>Price ${stock.price}</p>
                     <p>Volume Avg. {(stock.volume/1000000).toFixed(2)}M </p>
@@ -68,13 +68,7 @@ export default function Stock(props) {
                     <p>Daily High: ${stock.dayHigh}</p>
                     <p>Daily Low: ${stock.dayLow}</p>
                     <p>52 Week Range {stock.yearLow}-{stock.yearHigh} </p>
-                    <p>Year Low: {stock.yearLow} </p> */}
-                    <h1>{stock.name}</h1>
-                    <h1>USD {stock.price}</h1>
-                    <h2>Change: {stock.change.toFixed(2)}</h2>
-                    <h2>Daily High: {stock.dayHigh}</h2>
-                    <h2>Daily Low: {stock.dayLow}</h2>
-
+                    <p>Year Low: {stock.yearLow} </p>
                 </div>
             </main>
         )
