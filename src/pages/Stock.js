@@ -58,17 +58,20 @@ export default function Stock(props) {
     const loaded = () => {
         return (
             <main>
-                <div>
-                    <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}>{stock.change.toFixed(2)}</span> </h2>
-                    <p>Symbol {stock.symbol} </p>
-                    <p>Price ${stock.price}</p>
-                    <p>Volume Avg. {(stock.volume/1000000).toFixed(2)}M </p>
-                    {stock.marketCap > 12 ? <p>Market Cap {(stock.marketCap/1000000000000).toFixed(3)}T</p>: stock.marketCap > 9 && stock.marketCap <= 12 ? <p>Market Cap {(stock.marketCap/1000000000).toFixed(3)}B </p> : <p>Market Cap {(stock.marketCap/1000000).toFixed(3)}M </p> }
-                    <p>Change: ${stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)})</p>
-                    <p>Daily High: ${stock.dayHigh}</p>
-                    <p>Daily Low: ${stock.dayLow}</p>
-                    <p>52 Week Range {stock.yearLow}-{stock.yearHigh} </p>
-                    <p>Year Low: {stock.yearLow} </p>
+                <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}>{stock.change.toFixed(2)}</span> </h2>
+                <div id="grid">
+                    <div className="column">
+                        <p>Symbol {stock.symbol} </p>
+                        <p>Price ${stock.price}</p>
+                        <p>Volume Avg. {(stock.volume/1000000).toFixed(2)}M </p>
+                        {stock.marketCap > 12 ? <p>Market Cap {(stock.marketCap/1000000000000).toFixed(3)}T</p>: stock.marketCap > 9 && stock.marketCap <= 12 ? <p>Market Cap {(stock.marketCap/1000000000).toFixed(3)}B </p> : <p>Market Cap {(stock.marketCap/1000000).toFixed(3)}M </p> }
+                    </div>
+                    <div className="column">
+                        <p>Change: ${stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)})</p>
+                        <p>Daily High: ${stock.dayHigh}</p>
+                        <p>Daily Low: ${stock.dayLow}</p>
+                        <p>52 Week Range {stock.yearLow}-{stock.yearHigh} </p>
+                    </div>
                 </div>
             </main>
         )
