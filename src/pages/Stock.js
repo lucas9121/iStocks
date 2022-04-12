@@ -47,7 +47,12 @@ export default function Stock(props) {
     const loaded = () => {
         return (
             <main>
-                <h2>{stock.name} ({stock.symbol}) <small>$</small>{stock.price} <span style={{color: `${color}`}}><small>$</small>{stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)}<small>%</small>)</span> </h2>
+                <div id="title">
+                    <h2>{stock.name} </h2>
+                    <h2>({stock.symbol}) </h2>
+                    <h2><small>$</small>{stock.price} </h2>
+                    <h2><span style={{color: `${color}`}}><small>$</small>{stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)}<small>%</small>)</span> </h2>
+                </div>
                 <div id="grid">
                     <div className="column">
                         <p>Symbol <span>{stock.symbol}</span> </p>
