@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import stocksData from "../data";
 
 
 export default function Stock(props) {
@@ -11,15 +10,18 @@ export default function Stock(props) {
     // const example = `https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=1693ef68995ff34e46bfa87d2b6b909f`
     const [stock, setStock] = useState({});
     const [color, setColor] = useState('black')
-    
-    // const getStock = async () => {
-    //     try {
-    //         const data = await stocksData.find(s => s.symbol === symbol)
-    //         setStock(data)
-    //     }   catch(err) {
-    //         console.log(err)
-    //     }
-    // };
+
+    //Checks if number is in the Trillions, Billions or Millions
+    const numChecker = (num) => {
+        let arr = num.toString().split('')
+        if(arr.length > 12){
+            return <span>{(num/1000000000000).toFixed(2)}T</span>
+        } else if(arr.length > 9 && arr.length <= 12){
+            return <span>{(num/1000000000).toFixed(2)}B</span>
+        }else {
+            return <span>{(num/1000000).toFixed(2)}M</span>
+        }
+    }
 
     const getStock = async() => {
         try {
@@ -39,38 +41,31 @@ export default function Stock(props) {
             setColor('red')
         }
     }, []);
-
-
-    // return (
-    //     <main className="stock-page">
-    //         <div>
-    //             <h1>{stock.name}</h1>
-    //             <h2>Current Price: {stock.lastPrice}</h2>
-    //             <h2>Change: {stock.change}</h2>
-    //             <h2>Daily High: {stock.high}</h2>
-    //             <h2>Daily Low{stock.low}</h2>
-    //         </div>
-    //     </main>
-    // );
    
 
 
     const loaded = () => {
         return (
             <main>
-                <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}>{stock.change.toFixed(2)}</span> </h2>
+                <h2>{stock.name} ({stock.symbol}) {stock.price} <span style={{color: `${color}`}}><small>$</small>{stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)}<small>%</small>)</span> </h2>
                 <div id="grid">
                     <div className="column">
-                        <p>Symbol {stock.symbol} </p>
-                        <p>Price ${stock.price}</p>
-                        <p>Volume Avg. {(stock.volume/1000000).toFixed(2)}M </p>
-                        {stock.marketCap > 12 ? <p>Market Cap {(stock.marketCap/1000000000000).toFixed(3)}T</p>: stock.marketCap > 9 && stock.marketCap <= 12 ? <p>Market Cap {(stock.marketCap/1000000000).toFixed(3)}B </p> : <p>Market Cap {(stock.marketCap/1000000).toFixed(3)}M </p> }
+                        <p>Symbol <span>{stock.symbol}</span> </p>
+                        <p>Exchnage: <span>{stock.exchange}</span></p>
+                        <p>Price <span><small>$</small>{stock.price}</span></p>
+                        <p>Open <span><small>$</small>{stock.open}</span></p>
+                        <p>Previous Close <span><small>$</small>{stock.previousClose}</span></p>
+                        <p>Volume {numChecker(stock.volume)}</p>
+                        <p>Volume Avg. {numChecker(stock.avgVolume)} </p>
                     </div>
                     <div className="column">
-                        <p>Change: ${stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)})</p>
-                        <p>Daily High: ${stock.dayHigh}</p>
-                        <p>Daily Low: ${stock.dayLow}</p>
-                        <p>52 Week Range {stock.yearLow}-{stock.yearHigh} </p>
+                        <p>Market Cap {numChecker(stock.marketCap)} </p>
+                        <p>Shares {numChecker(stock.sharesOutstanding)} </p>
+                        <p>52 Week Range <span><small>$</small>{stock.yearLow}-<small>$</small>{stock.yearHigh}</span> </p>
+                        <p>Daily High: <span><small>$</small>{stock.dayHigh}</span></p>
+                        <p>Daily Low: <span><small>$</small>{stock.dayLow}</span></p>
+                        <p>P/E <span>{stock.pe.toFixed(2)}</span></p>
+                        <p>EPS <span>{stock.eps.toFixed(2)}</span></p>
                     </div>
                 </div>
             </main>
