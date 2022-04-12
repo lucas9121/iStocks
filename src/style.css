@@ -38,5 +38,15 @@ nav ul li:hover {
 }
 
 main {
-    padding-left: 20px;
+    text-align: center;
+}
+
+main ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
 }
