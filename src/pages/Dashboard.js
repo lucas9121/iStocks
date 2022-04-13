@@ -44,7 +44,7 @@ export default function Stocks() {
                                 return(
                                     <tr key={idx} className="tr" >
                                         <td className="td"><Link to={`/stocks/${stock.symbol}`}>{stock.name} ({stock.symbol})</Link></td>
-                                        <td className="td"><small>$</small>{stock.price}</td>
+                                        <td className="td"><small>$</small>{stock.price.toFixed(2)}</td>
                                         {stock.change > 0 ? <td className="td"><span style={{color: 'green'}}><small>$</small>{stock.change.toFixed(2)} (+{stock.changesPercentage.toFixed(2)}<small>%</small>)</span></td> : <td className="td"><span style={{color: 'red'}}><small>$</small>{stock.change.toFixed(2)} ({stock.changesPercentage.toFixed(2)}<small>%</small>)</span></td>}
                                     </tr>
                                 )
