@@ -73,8 +73,10 @@ main table {
     border-top: solid;
 }
 
-.td > Link{
+.td a{
     display: block;
+    text-decoration: none;
+    color: black;
 }
 
 #grid{
