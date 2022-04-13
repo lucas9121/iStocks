@@ -51,13 +51,6 @@ main ul {
     padding: 0;
 }
 
-#title {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: auto;
-}
-
 main table {
     margin: auto;
     width: 75%;
@@ -84,11 +77,18 @@ main table {
     grid-template-columns: 50% 50%;
 }
 
+#title {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin: auto;
+}
+
 .column > p {
     display: flex;
     justify-content: space-between;
-    border-bottom: solid 1px;
-    border-left: solid;
+    border-bottom: solid 1px #6532cb;
+    border-left: solid #6532cb;
     margin: 0;
     padding: 1%;
 }
