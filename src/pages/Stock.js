@@ -58,18 +58,18 @@ export default function Stock(props) {
                     <div className="column">
                         <p>Symbol <span>{stock.symbol}</span> </p>
                         <p>Exchnage: <span>{stock.exchange}</span></p>
-                        <p>Price <span><small>$</small>{stock.price}</span></p>
-                        <p>Open <span><small>$</small>{stock.open}</span></p>
-                        <p>Previous Close <span><small>$</small>{stock.previousClose}</span></p>
+                        <p>Price <span><small>$</small>{stock.price.toFixed(2)}</span></p>
+                        <p>Open <span><small>$</small>{stock.open.toFixed(2)}</span></p>
+                        <p>Previous Close <span><small>$</small>{stock.previousClose.toFixed(2)}</span></p>
                         <p>Volume {numChecker(stock.volume)}</p>
                         <p>Volume Avg. {numChecker(stock.avgVolume)} </p>
                     </div>
                     <div className="column">
                         <p>Market Cap {numChecker(stock.marketCap)} </p>
                         <p>Shares {numChecker(stock.sharesOutstanding)} </p>
-                        <p>52 Week Range <span><small>$</small>{stock.yearLow}-<small>$</small>{stock.yearHigh}</span> </p>
-                        <p>Daily High: <span><small>$</small>{stock.dayHigh}</span></p>
-                        <p>Daily Low: <span><small>$</small>{stock.dayLow}</span></p>
+                        <p>52 Week Range <span><small>$</small>{stock.yearLow.toFixed(2)}-<small>$</small>{stock.yearHigh.toFixed(2)}</span> </p>
+                        <p>Daily High: <span><small>$</small>{stock.dayHigh.toFixed(2)}</span></p>
+                        <p>Daily Low: <span><small>$</small>{stock.dayLow.toFixed(2)}</span></p>
                         <p>P/E {stock.pe ? <span>{stock.pe.toFixed(2)}</span> : <span>None</span>}</p>
                         <p>EPS <span>{stock.eps.toFixed(2)}</span></p>
                     </div>
