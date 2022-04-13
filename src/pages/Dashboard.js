@@ -61,7 +61,7 @@ export default function Stocks() {
                         {
                             stocks.map((stock, idx) => {
                                 return(
-                                    <tr key={idx}>
+                                    <tr key={idx} className="tr">
                                     {/* <Link to={`/stocks/${stock.symbol}`}> */}
                                         {/* <td className="td"><Link to={`/stocks/${stock.symbol}`}>{stock.name} ({stock.symbol})</Link></td>
                                         <td className="td"><small>$</small>{stock.price}</td>
