@@ -65,8 +65,16 @@ main table {
     text-align: left;
 }
 
+.tr:hover{
+    background-color: grey;
+}
+
 .td{
     border-top: solid;
+}
+
+.td > Link{
+    display: block;
 }
 
 #grid{
