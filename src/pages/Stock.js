@@ -28,6 +28,7 @@ export default function Stock(props) {
             const response = await fetch(URL);
             const data = await response.json();
             setStock(data[0]);
+            console.log(data[0])
         }   catch(err) {
             console.error(err)
         }
@@ -69,7 +70,7 @@ export default function Stock(props) {
                         <p>52 Week Range <span><small>$</small>{stock.yearLow}-<small>$</small>{stock.yearHigh}</span> </p>
                         <p>Daily High: <span><small>$</small>{stock.dayHigh}</span></p>
                         <p>Daily Low: <span><small>$</small>{stock.dayLow}</span></p>
-                        <p>P/E <span>{stock.pe.toFixed(2)}</span></p>
+                        <p>P/E {stock.pe ? <span>{stock.pe.toFixed(2)}</span> : <span>None</span>}</p>
                         <p>EPS <span>{stock.eps.toFixed(2)}</span></p>
                     </div>
                 </div>
