@@ -66,6 +66,7 @@ main table {
     font-size: x-large;
     text-align: left;
     margin-bottom: 5%;
+    margin-top: 5%;
 }
 
 .tr:hover{
@@ -79,6 +80,7 @@ main table {
 
 .td{
     border-top: solid;
+    padding: 0.5% 0;
 }
 
 .td a{
@@ -87,20 +89,21 @@ main table {
     color: black;
 }
 
+
+/* Stock */
+
 #grid{
     display: grid;
     grid-template-columns: 50% 50%;
+    font-size: x-large;
 }
-
-
-
-/* Stock */
 
 #title {
     display: flex;
     justify-content: space-around;
-    width: 40%;
-    margin: auto;
+    width: 65%;
+    font-size: x-large;
+    margin: 2% auto;
 }
 
 .column > p {
