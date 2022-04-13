@@ -22,6 +22,9 @@ header a{
     text-decoration: none;
 }
 
+
+/* Nav */
+
 nav ul {
     display: flex;
     list-style-type: none;
@@ -41,25 +44,37 @@ main {
     text-align: center;
 }
 
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+/* About */
+
 main ol {
     list-style-type: none;
     padding: 0;
 }
 
-main ul {
-    list-style-type: none;
-    padding: 0;
-}
+
+/* Dashboard */
 
 main table {
     margin: auto;
     width: 75%;
     font-size: x-large;
     text-align: left;
+    margin-bottom: 5%;
 }
 
 .tr:hover{
-    background-color: grey;
+    background-color: #6532cb;
+    color: white;
+}
+
+.td:hover > a{
+    color: white;
 }
 
 .td{
@@ -76,6 +91,10 @@ main table {
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+
+
+/* Stock */
 
 #title {
     display: flex;
