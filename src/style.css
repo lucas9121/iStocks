@@ -58,6 +58,17 @@ main ul {
     margin: auto;
 }
 
+main table {
+    margin: auto;
+    width: 75%;
+    font-size: x-large;
+    text-align: left;
+}
+
+.td{
+    border-top: solid;
+}
+
 #grid{
     display: grid;
     grid-template-columns: 50% 50%;
