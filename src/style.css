@@ -51,12 +51,12 @@ main ul {
     padding: 0;
 }
 
-/* #title {
+#title {
     display: flex;
-    border: solid red;
-    justify-content: space-between;
-    width: 30%;
-} */
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+}
 
 #grid{
     display: grid;
